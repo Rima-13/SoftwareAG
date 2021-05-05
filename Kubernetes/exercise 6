@@ -1,0 +1,7 @@
+6. Change the image of web-deploy to nginx:1.20.0 and record the change 
+
+ANS:
+
+kubectl set image deployment.apps/web-deploy nginx=nginx:1.20.0 –record
+
+kubectl rollout history deployment.apps/web-deploy
