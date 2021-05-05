@@ -4,3 +4,7 @@ ANS:
 
 Using -volume:
 docker run --name=ex4Volume -d -v /mnt/redis-data:/data redis:6.2.2
+
+
+Using --mount:
+docker run --name=ex4Mount -d --mount type=bind,source=/mnt/redis-data,target=/data redis:6.2.2
