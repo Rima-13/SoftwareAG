@@ -1,0 +1,6 @@
+4.	Spin up a container with image redis:6.2.2 and mount volume /mnt/redis-data of host to the /data of the container
+
+ANS:
+
+Using -volume:
+docker run --name=ex4Volume -d -v /mnt/redis-data:/data redis:6.2.2
