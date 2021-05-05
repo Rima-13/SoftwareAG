@@ -1,0 +1,5 @@
+1.	Create a pod called web-server with nginx:1.19.10 image
+
+ANS:
+kubectl run web-server --image=nginx:1.19.10
+
