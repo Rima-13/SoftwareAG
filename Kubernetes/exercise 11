@@ -1,0 +1,27 @@
+11. Update the storage size of the redis persistent volume to 3Gi and record the change
+
+
+ANS:
+
+vi pv-def.yml
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 3Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/mnt/redis/data"
+ 
+
+
+kubectl apply -f pv-def.yml --record
+
+kubectl get pv redis-pv -o yaml > cause.yml
+
+cat cause.yml
