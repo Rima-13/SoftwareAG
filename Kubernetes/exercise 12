@@ -1,0 +1,28 @@
+12. Create an Ingress for web-deploy deployment with wildcard hostname
+
+
+ANS:
+
+kubectl expose deployment web-deploy --port=80 --type=NodePort
+ingress-def.yml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ex5-ingress
+spec:
+  rules:  
+  - host: "*.ex5.com"
+    http:
+      paths:
+      - path: /ex5
+        pathType: Prefix
+        backend:
+          service:
+            name: web-deploy
+            port:
+              number: 80
+
+
+
+kubectl create -f ingress-def.yml
+
