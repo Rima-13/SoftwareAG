@@ -1,0 +1,6 @@
+2.	Spin up a container with image nginx:1.19.10 such that it should restart automatically if any fatal errors are encountered
+
+
+ANS:
+docker run --name=ex2 --restart on-failure nginx:1.19.10
+
