@@ -1,0 +1,25 @@
+5.	Create a dockerfile with base image centos:7 , and build an image with any sample application file
+
+ANS:
+vi Dockerfile:
+
+FROM centos:7
+RUN yum -y update && yum -y install epel-release
+RUN yum install -y python python-pip && pip install flask
+COPY ./app.py /app.py
+ENTRYPOINT FLASK_APP=/app.py flask run –host=0.0.0.0
+
+vi app.py
+
+from flask import Flask
+app=Flask(__name__)
+@app.route(“/”)
+def display():
+       return “Hi! I am a webpage! exercise 5 is complete!”
+
+
+
+docker build . -f Dockerfile -t ex5_im
+
+docker run -p 8080:5000 -d --name=ex5_ct ex5_im 
+
