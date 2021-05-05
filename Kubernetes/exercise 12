@@ -11,10 +11,10 @@ metadata:
   name: ex5-ingress
 spec:
   rules:  
-  - host: "*.ex5.com"
+  - host: ""
     http:
       paths:
-      - path: /ex5
+      - path: /
         pathType: Prefix
         backend:
           service:
