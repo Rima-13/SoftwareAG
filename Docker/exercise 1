@@ -1,3 +1,5 @@
-/*1.	Spin up a temporary container with image nginx:1.19.10 and execute inside it, such that the container should be destroyed, once you exit from the container*/
+1.	Spin up a temporary container with image nginx:1.19.10 and execute inside it, such that the container should be destroyed, once you exit from the container
 
+
+ANS:
 docker run --name=ex1 --rm nginx:1.19.10 echo "hi! I am executing inside container"
