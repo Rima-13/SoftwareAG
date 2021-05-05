@@ -1,0 +1,6 @@
+7. Scale web-deploy to 5 replica
+
+ANS:
+
+kubectl scale deployment web-deploy --replicas=5
+
