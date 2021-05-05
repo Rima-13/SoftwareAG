@@ -1,0 +1,4 @@
+2.	Expose port 80 of the web-server pod to be reachable within cluster
+
+ANS:
+kubectl expose pod web-server --type=ClusterIP --port=80 –name=ex2-service
