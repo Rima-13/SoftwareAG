@@ -1,0 +1,27 @@
+6.	Create a bridge network called test-app and spin up nginx and redis containers in that network
+
+ANS:
+docker network create --driver bridge test-app
+
+vi docker-compose.yml
+version: “3.3”
+services:
+  ngin_cont:
+    image: nginx
+    ports:
+    -	8080:80
+  redis_cont:
+    image: redis:6.2.2
+    ports:
+    -	8081:6379
+networks:
+  default:
+    external:
+      name: test-app
+
+	
+  
+  docker-compose up -d
+	
+	docker network inspect test-app
+
