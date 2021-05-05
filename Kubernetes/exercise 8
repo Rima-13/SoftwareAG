@@ -1,0 +1,26 @@
+8. Create a persistent volume redis-pv with below specs:
+   i) hostpath /mnt/redis/data
+   ii) storage size 2Gi
+   iii) access mode – ReadWriteOnce
+
+
+ANS:
+
+pv-def.yml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/mnt/redis/data"
+
+
+
+kubectl create -f pv-def.yml
+
