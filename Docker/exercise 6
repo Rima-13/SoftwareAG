@@ -3,7 +3,10 @@
 ANS:
 docker network create --driver bridge test-app
 
+
+
 vi docker-compose.yml
+
 version: “3.3”
 services:
   ngin_cont:
@@ -20,8 +23,9 @@ networks:
       name: test-app
 
 	
-  
-  docker-compose up -d
+
+
+docker-compose up -d
 	
-	docker network inspect test-app
+docker network inspect test-app
 
