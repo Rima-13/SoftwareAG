@@ -1,0 +1,5 @@
+3.	Spin up a container with image nginx:1.19.10 such that port 80 of the container can be connected from port 8080 of the host
+
+
+ANS:
+docker run --name=ex3 -p 8080:80 nginx:1.19.10
